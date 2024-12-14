@@ -1,7 +1,7 @@
 #include "sprites.h"
 #include "textures.h"
 
-C2D_Image banner, driveIcon, menuIcon[10], btnA, btnB, btnX, btnY, btnStartSelect, btnL, btnR,
+C2D_Image banner, driveIcon, menuIcon[11], btnA, btnB, btnX, btnY, btnStartSelect, btnL, btnR,
     btnZL, btnZR, btnDpad, btnCpad, btnCstick, btnHome, cursor, volumeIcon;
 
 namespace Textures {
@@ -16,14 +16,15 @@ namespace Textures {
         // Menu items
         menuIcon[0] = C2D_SpriteSheetGetImage(spritesheet, sprites_kernel_idx);
         menuIcon[1] = C2D_SpriteSheetGetImage(spritesheet, sprites_system_idx);
-        menuIcon[2] = C2D_SpriteSheetGetImage(spritesheet, sprites_power_idx);
-        menuIcon[3] = C2D_SpriteSheetGetImage(spritesheet, sprites_nnid_idx);
-        menuIcon[4] = C2D_SpriteSheetGetImage(spritesheet, sprites_config_idx);
-        menuIcon[5] = C2D_SpriteSheetGetImage(spritesheet, sprites_controller_idx);
-        menuIcon[6] = C2D_SpriteSheetGetImage(spritesheet, sprites_wifi_idx);
-        menuIcon[7] = C2D_SpriteSheetGetImage(spritesheet, sprites_storage_idx);
-        menuIcon[8] = C2D_SpriteSheetGetImage(spritesheet, sprites_misc_idx);
-        menuIcon[9] = C2D_SpriteSheetGetImage(spritesheet, sprites_exit_idx);
+        menuIcon[2] = C2D_SpriteSheetGetImage(spritesheet, sprites_system_idx);
+        menuIcon[3] = C2D_SpriteSheetGetImage(spritesheet, sprites_power_idx);
+        menuIcon[4] = C2D_SpriteSheetGetImage(spritesheet, sprites_nnid_idx);
+        menuIcon[5] = C2D_SpriteSheetGetImage(spritesheet, sprites_config_idx);
+        menuIcon[6] = C2D_SpriteSheetGetImage(spritesheet, sprites_controller_idx);
+        menuIcon[7] = C2D_SpriteSheetGetImage(spritesheet, sprites_wifi_idx);
+        menuIcon[8] = C2D_SpriteSheetGetImage(spritesheet, sprites_storage_idx);
+        menuIcon[9] = C2D_SpriteSheetGetImage(spritesheet, sprites_misc_idx);
+        menuIcon[10] = C2D_SpriteSheetGetImage(spritesheet, sprites_exit_idx);
 
         // Controls
         btnA = C2D_SpriteSheetGetImage(spritesheet, sprites_A_idx);
