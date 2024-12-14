@@ -21,6 +21,7 @@ namespace GUI {
 
     enum PageState {
         KERNEL_INFO_PAGE = 0,
+        BACKUPS_PAGE,
         SYSTEM_INFO_PAGE,
         BATTERY_INFO_PAGE,
         NNID_INFO_PAGE,
@@ -187,6 +188,10 @@ namespace GUI {
         GUI::DrawItemf(5, "MAC Address:", displayInfo? info.macAddress : "");
         GUI::DrawItemf(6, "Serial number:", "%s %d", displayInfo? reinterpret_cast<const char *>(info.serialNumber) : "", displayInfo? info.checkDigit : 0);
         GUI::DrawItemf(7, "ECS Device ID:", "%llu", displayInfo? info.soapId : 0);
+    }
+
+    static void BackupsInfoPage(const BackupsInfo& info, bool& displayInfo) {
+        GUI::DrawItemf(1, "olokos says hello! :)", "%s", __TIME__);
     }
 
     static void BatteryInfoPage(const SystemStateInfo &info) {
@@ -438,6 +443,7 @@ namespace GUI {
 
         const char *items[] = {
             "Kernel",
+            "Backups",
             "System",
             "Battery",
             "NNID",
@@ -454,6 +460,7 @@ namespace GUI {
 
         Service::Init();
         KernelInfo kernelInfo = Service::GetKernelInfo();
+        BackupsInfo backupsInfo = Service::GetBackupsInfo();
         SystemInfo systemInfo = Service::GetSystemInfo();
         NNIDInfo nnidInfo = Service::GetNNIDInfo();
         ConfigInfo configInfo = Service::GetConfigInfo();
@@ -474,6 +481,10 @@ namespace GUI {
             switch (selection) {
                 case KERNEL_INFO_PAGE:
                     GUI::KernelInfoPage(kernelInfo, displayInfo);
+                    break;
+
+                case BACKUPS_PAGE:
+                    GUI::BackupsInfoPage(backupsInfo, displayInfo);
                     break;
 
                 case SYSTEM_INFO_PAGE:
