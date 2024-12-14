@@ -93,6 +93,19 @@ typedef struct {
     u8 rawButtonState;
 } SystemStateInfo;
 
+typedef struct {
+    const char* model;
+    const char* hardware;
+    const char* region;
+    const char* language;
+    u64 localFriendCodeSeed;
+    const char* nandLocalFriendCodeSeed;
+    const char* macAddress;
+    u8* serialNumber;
+    int checkDigit;
+    u64 soapId;
+} BackupsInfo;
+
 namespace ACI {
     Result GetSSID(char *ssid);
     Result GetSecurityMode(acSecurityMode *mode);
@@ -111,6 +124,7 @@ namespace Service {
     void Init(void);
     void Exit(void);
     KernelInfo GetKernelInfo(void);
+    BackupsInfo GetBackupsInfo(void);
     SystemInfo GetSystemInfo(void);
     NNIDInfo GetNNIDInfo(void);
     ConfigInfo GetConfigInfo(void);

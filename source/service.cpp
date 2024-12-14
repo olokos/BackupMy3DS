@@ -137,6 +137,21 @@ namespace Service {
         return info;
     }
 
+    BackupsInfo GetBackupsInfo(void) {
+        BackupsInfo info = { 0 };
+        info.model = System::GetModel();
+        info.hardware = System::GetRunningHW();
+        info.region = System::GetRegion();
+        info.language = System::GetLanguage();
+        info.localFriendCodeSeed = System::GetLocalFriendCodeSeed();
+        info.nandLocalFriendCodeSeed = System::GetNandLocalFriendCodeSeed();
+        info.macAddress = System::GetMacAddress();
+        info.serialNumber = System::GetSerialNumber();
+        info.checkDigit = System::GetCheckDigit(info.serialNumber);
+        info.soapId = System::GetSoapId();
+        return info;
+    }
+
     SystemInfo GetSystemInfo(void) {
         SystemInfo info = { 0 };
         info.model = System::GetModel();
