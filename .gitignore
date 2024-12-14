@@ -8,3 +8,5 @@ romfs/
 *.3dsx
 *.smdh
 *.cia
+/.vs/BackupMy3DS
+*.sqlite
